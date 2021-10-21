@@ -5,14 +5,16 @@ const AutoComplete = ({ suggestions }) => {
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [input, setInput] = useState("");
+
+    const options = suggestions.results
     
     const onChange = (e) => {
         const userInput = e.target.value;
     
         // Filter our suggestions that don't contain the user's input
-        const unLinked = suggestions.filter(
+        const unLinked = options.filter(
             (suggestion) =>
-                suggestion.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+                suggestion.title.toLowerCase().indexOf(userInput.toLowerCase()) > -1
         );
     
         setInput(e.target.value);
@@ -40,7 +42,7 @@ const AutoComplete = ({ suggestions }) => {
                     }
                     return (
                         <li className={className} id={suggestion.id} key={suggestion.id} onClick={onClick}>
-                            {suggestion.name}
+                            {suggestion.title}
                         </li>
                     );
                 })}
@@ -53,7 +55,7 @@ const AutoComplete = ({ suggestions }) => {
     };  
 
     return (
-        <div class="autocomplete-container">
+        <div className="autocomplete-container">
             <input
                 type="text"
                 onChange={onChange}
