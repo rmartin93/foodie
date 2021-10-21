@@ -2,7 +2,7 @@ const Footer = () => {
     return ( 
         <footer>
             <div className="footer-content">
-                Here is a footer
+                Powered by the Spoonacular API
             </div>
         </footer>
     );
