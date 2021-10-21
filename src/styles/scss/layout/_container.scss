@@ -1,0 +1,20 @@
+html, body, #root {
+    height: 100%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.page-content > *,
+footer > * {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #f2f2f2;
+}
